@@ -21,7 +21,7 @@ function isArmstrong(input){
     while(input>0){
         let reminder=input%10;
         out+=Math.pow(reminder,numberSize);
-        input/=10;
+        input=Math.floor(input/10);
     }
     return out===temp ? true:false;
 }
@@ -31,15 +31,11 @@ const checkArmstrong=(input)=>{
     let numberSize=stringForm.length;
     let out=0;
     const temp=input;
-    let itr=0;
-
-    while(itr<numberSize){
+    while(input>0){
         let reminder=input%10;
         out+=Math.pow(reminder,numberSize);
-        itr++;
-        input/=10;
+        input=Math.floor(input/10);
     }
-    console.log(out);
     return out===temp ? true:false;
 }
 console.log(checkPrime(13));
